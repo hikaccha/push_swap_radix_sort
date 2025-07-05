@@ -1,0 +1,23 @@
+# Compiled files
+*.o
+*.a
+a.out
+
+# Vim swap files
+*.swp
+*.swo
+
+# Precompiled headers
+*.gch
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Test files
+test*
+main 
