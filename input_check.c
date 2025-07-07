@@ -6,16 +6,27 @@
 /*   By: ichikawahikaru <ichikawahikaru@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 22:43:36 by ichikawahik       #+#    #+#             */
-/*   Updated: 2025/07/04 23:56:20 by ichikawahik      ###   ########.fr       */
+/*   Updated: 2025/07/08 01:06:09 by ichikawahik      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void error_exit(void)
+void error_exit(char **tmp_array)
 {
     write(2, "Error\n", 6);
+    ft_free(tmp_array);
     exit(1);
+}
+
+int count_arg(char **argv)
+{
+    int len;
+    
+    len = 0;
+    while (argv[len])
+        len++;
+    return (len);
 }
 
 int check_doubles(char **argv)
@@ -69,15 +80,13 @@ void	check_input(int argc, char **argv)
         tmp_array = argv + 1;
     while (tmp_array[i])
     {
-        if (!argv[i][0])
-            error_exit();
         tmp_argv = ft_atoi(tmp_array[i]);
         if(tmp_argv < INT_MIN || tmp_argv > INT_MAX)
-            error_exit();
+            error_exit(tmp_array);
         if(check_doubles(tmp_array))
-            error_exit();
+            error_exit(tmp_array);
         if (!check_nbr(tmp_array[i]))
-            error_exit();
+            error_exit(tmp_array);
         i++;
     }
     if(argc == 2)
