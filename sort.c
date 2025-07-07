@@ -6,11 +6,25 @@
 /*   By: ichikawahikaru <ichikawahikaru@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 15:07:46 by ichikawahik       #+#    #+#             */
-/*   Updated: 2025/07/07 19:04:14 by ichikawahik      ###   ########.fr       */
+/*   Updated: 2025/07/08 00:42:36 by ichikawahik      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int sorted(t_stack **head)
+{
+    t_stack *tmp;
+
+    tmp = *head;
+    while (tmp && tmp->next)
+    {
+        if (tmp->value > tmp->next->value)
+            return (0);
+        tmp = tmp->next;
+    }
+    return (1);
+}
 
 void    sort_three(t_stack **head)
 {
