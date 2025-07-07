@@ -6,11 +6,32 @@
 /*   By: ichikawahikaru <ichikawahikaru@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 23:59:29 by ichikawahik       #+#    #+#             */
-/*   Updated: 2025/07/05 00:22:30 by ichikawahik      ###   ########.fr       */
+/*   Updated: 2025/07/08 01:36:49 by ichikawahik      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void    set_index(t_stack *head, int link_size)
+{
+    t_stack *biggest;
+    t_stack *tmp;
+
+    while (link_size-- > 0)
+    {
+        biggest = head;
+        tmp = head->next;
+        while (tmp)
+        {
+            if (!tmp->index && (biggest == NULL
+                || tmp->value > biggest->value))
+                biggest = tmp;
+            tmp = tmp->next;
+        }
+        if (biggest)
+            biggest->index = link_size;
+    }
+}
 
 t_stack *init_list(int argc, char **argv)
 {
@@ -29,7 +50,7 @@ t_stack *init_list(int argc, char **argv)
     }
     while (tmp[i])
     {
-        insert_node(&stack_a, ft_atoi(tmp[i]));
+        insert_last(&stack_a, ft_atoi(tmp[i]));
         i++;
     }
     if (argc == 2)
