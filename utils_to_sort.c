@@ -6,7 +6,7 @@
 /*   By: ichikawahikaru <ichikawahikaru@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 19:42:39 by ichikawahik       #+#    #+#             */
-/*   Updated: 2025/07/08 13:05:19 by ichikawahik      ###   ########.fr       */
+/*   Updated: 2025/07/08 13:23:38 by ichikawahik      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	find_biggest(t_stack **head)
 	t_stack	*tmp;
 
 	biggest = INT_MIN;
-	tmp = head;
+	tmp = *head;
 	while (tmp)
 	{
 		if (tmp->index > biggest)

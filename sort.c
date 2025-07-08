@@ -6,7 +6,7 @@
 /*   By: ichikawahikaru <ichikawahikaru@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 15:07:46 by ichikawahik       #+#    #+#             */
-/*   Updated: 2025/07/08 13:03:22 by ichikawahik      ###   ########.fr       */
+/*   Updated: 2025/07/08 13:23:22 by ichikawahik      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	sort_five(t_stack **stack_a, t_stack **stack_b)
 {
 	int	size;
 
-	size = count_nodes(stack_a);
+	size = count_nodes(*stack_a);
 	while (size--)
 	{
 		if ((*stack_a)->index == 0 || (*stack_a)->index == 1)
@@ -89,7 +89,7 @@ void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 {
 	int	size;
 
-	size = count_nodes(stack_a);
+	size = count_nodes(*stack_a);
 	if (!sorted(stack_a) && size <= 3)
 		sort_three(stack_a);
 	else if (!sorted(stack_a) && size <= 5)
