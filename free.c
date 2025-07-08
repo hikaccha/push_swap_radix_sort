@@ -6,13 +6,13 @@
 /*   By: ichikawahikaru <ichikawahikaru@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 01:07:24 by ichikawahik       #+#    #+#             */
-/*   Updated: 2025/07/08 12:38:25 by ichikawahik      ###   ########.fr       */
+/*   Updated: 2025/07/08 13:25:51 by ichikawahik      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_array(char **tmp_array)
+void	ft_free(char **tmp_array)
 {
 	int	i;
 
