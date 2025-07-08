@@ -6,7 +6,7 @@
 /*   By: ichikawahikaru <ichikawahikaru@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 00:08:12 by ichikawahik       #+#    #+#             */
-/*   Updated: 2025/07/08 12:42:26 by ichikawahik      ###   ########.fr       */
+/*   Updated: 2025/07/08 13:16:41 by ichikawahik      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	insert_last(t_stack **head, int new_value)
 	if (*head == NULL)
 	{
 		*head = make_new_node(new_value);
-		retrun (0);
+		return ;
 	}
 	current = *head;
 	while (current->next != NULL)

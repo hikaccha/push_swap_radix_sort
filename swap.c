@@ -6,7 +6,7 @@
 /*   By: ichikawahikaru <ichikawahikaru@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 23:56:15 by ichikawahik       #+#    #+#             */
-/*   Updated: 2025/07/08 13:04:22 by ichikawahik      ###   ########.fr       */
+/*   Updated: 2025/07/08 13:21:09 by ichikawahik      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	swap(t_stack **head)
 	t_stack	*tmp;
 
 	if (*head == NULL || (*head)->next == NULL)
-		return (0);
+		return ;
 	tmp = (*head)->next;
 	(*head)->next = tmp->next;
 	tmp->next = *head;

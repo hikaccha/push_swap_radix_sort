@@ -6,7 +6,7 @@
 /*   By: ichikawahikaru <ichikawahikaru@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 14:38:03 by ichikawahik       #+#    #+#             */
-/*   Updated: 2025/07/08 12:59:12 by ichikawahik      ###   ########.fr       */
+/*   Updated: 2025/07/08 13:20:55 by ichikawahik      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	rev_rotate(t_stack **head)
 	t_stack	*new_last;
 
 	if (*head == NULL || (*head)->next == NULL)
-		return (0);
+		return ;
 	prev_last = *head;
 	while (prev_last->next != NULL)
 	{

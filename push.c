@@ -6,7 +6,7 @@
 /*   By: ichikawahikaru <ichikawahikaru@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 23:21:05 by ichikawahik       #+#    #+#             */
-/*   Updated: 2025/07/08 12:58:18 by ichikawahik      ###   ########.fr       */
+/*   Updated: 2025/07/08 13:17:10 by ichikawahik      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	push(t_stack **stack_from, t_stack **stack_to)
 	t_stack	*tmp;
 
 	if (stack_from == NULL || *stack_from == NULL)
-		return (0);
+		return ;
 	tmp = *stack_from;
 	*stack_from = (*stack_from)->next;
 	if (stack_to == NULL)
