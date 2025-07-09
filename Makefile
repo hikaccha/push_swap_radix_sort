@@ -6,31 +6,46 @@
 #    By: ichikawahikaru <ichikawahikaru@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/07 15:27:32 by ichikawahik       #+#    #+#              #
-#    Updated: 2025/07/07 15:27:33 by ichikawahik      ###   ########.fr        #
+#    Updated: 2025/07/08 13:15:51 by ichikawahik      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap.a
+NAME = push_swap
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-SRC = push_swap.cc
+SRC = main.c \
+      input_check.c \
+      initialize.c \
+      linked_list.c \
+      push.c \
+      rotate.c \
+      rev_rotate.c \
+      swap.c \
+      sort.c \
+      utils_to_sort.c \
+      free.c
 
 OBJ = $(SRC:.c=.o)
-AR = ar rc
+LIBFT = libft/libft.a
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	$(AR) $(NAME) $(OBJ)
+$(NAME): $(OBJ) $(LIBFT)
+	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
+
+$(LIBFT):
+	make -C libft
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-    rm -f $(OBJ)
+	rm -f $(OBJ)
+	make -C libft clean
 
 fclean: clean
 	rm -f $(NAME)
+	make -C libft fclean
 
 re: fclean all
 
