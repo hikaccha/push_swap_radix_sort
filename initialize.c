@@ -6,7 +6,7 @@
 /*   By: ichikawahikaru <ichikawahikaru@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 23:59:29 by ichikawahik       #+#    #+#             */
-/*   Updated: 2025/07/08 12:40:39 by ichikawahik      ###   ########.fr       */
+/*   Updated: 2025/07/09 20:22:23 by ichikawahik      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,25 @@
 
 void	set_index(t_stack *head, int link_size)
 {
-	t_stack	*biggest;
+	t_stack	*smallest;
 	t_stack	*tmp;
+	int		current_index;
 
-	while (link_size-- > 0)
+	current_index = 0;
+	while (current_index < link_size)
 	{
-		biggest = head;
-		tmp = head->next;
+		smallest = NULL;
+		tmp = head;
 		while (tmp)
 		{
-			if (!tmp->index && (biggest == NULL
-					|| tmp->value > biggest->value))
-				biggest = tmp;
+			if (tmp->index == 0 && (smallest == NULL
+					|| tmp->value < smallest->value))
+				smallest = tmp;
 			tmp = tmp->next;
 		}
-		if (biggest)
-			biggest->index = link_size;
+		if (smallest)
+			smallest->index = current_index + 1;
+		current_index++;
 	}
 }
 
@@ -50,7 +53,7 @@ t_stack	*init_list(int argc, char **argv)
 	}
 	while (tmp[i])
 	{
-		insert_last(&stack_a, ft_atoi(tmp[i]));
+		insert_last(&stack_a, (int)ft_atoi(tmp[i]));
 		i++;
 	}
 	if (argc == 2)

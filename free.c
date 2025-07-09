@@ -6,7 +6,7 @@
 /*   By: ichikawahikaru <ichikawahikaru@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 01:07:24 by ichikawahik       #+#    #+#             */
-/*   Updated: 2025/07/08 13:25:51 by ichikawahik      ###   ########.fr       */
+/*   Updated: 2025/07/08 19:05:06 by ichikawahik      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_free(char **tmp_array)
 {
 	int	i;
 
+	if (!tmp_array)
+		return ;
 	i = 0;
 	while (tmp_array[i])
 	{
@@ -29,6 +31,8 @@ void	free_stack(t_stack **head)
 {
 	t_stack	*tmp;
 
+	if (!head || !*head)
+		return ;
 	while (*head)
 	{
 		tmp = *head;

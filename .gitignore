@@ -19,5 +19,6 @@ Thumbs.db
 .idea/
 
 # Test files
+checker*
 test*
 main 

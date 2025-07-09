@@ -3,34 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hichikaw <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ichikawahikaru <ichikawahikaru@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 08:03:55 by hichikaw          #+#    #+#             */
-/*   Updated: 2024/11/14 17:43:43 by hichikaw         ###   ########.fr       */
+/*   Updated: 2025/07/09 20:40:19 by ichikawahik      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_handle_overflow(int sign)
+static int	check_overflow(long result, int sign, char digit)
 {
-	if (sign == 1)
-		return (INT_MAX);
-	return (INT_MIN);
+	if (sign == 1 && result > (INT_MAX - (digit - '0')) / 10)
+		return (1);
+	if (sign == -1 && result > (-(long)INT_MIN - (digit - '0')) / 10)
+		return (1);
+	return (0);
 }
 
-int	ft_atoi(const char *nptr)
+long	ft_atoi(const char *nptr)
 {
-	int	result;
-	int	sign;
-	int	i;
+	long	result;
+	int		sign;
+	int		i;
 
 	result = 0;
 	sign = 1;
 	i = 0;
 	while (nptr[i] == ' ' || nptr[i] == '\t' || nptr[i] == '\n'
-		|| nptr[i] == '\v' || nptr[i] == '\f'
-		|| nptr[i] == '\r')
+		|| nptr[i] == '\v' || nptr[i] == '\f' || nptr[i] == '\r')
 		i++;
 	if (nptr[i] == '-' || nptr[i] == '+')
 	{
@@ -40,8 +41,8 @@ int	ft_atoi(const char *nptr)
 	}
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-		if (result > (INT_MAX - (nptr[i] - '0')) / 10)
-			return (ft_handle_overflow(sign));
+		if (check_overflow(result, sign, nptr[i]))
+			return (LONG_MIN);
 		result = result * 10 + (nptr[i] - '0');
 		i++;
 	}

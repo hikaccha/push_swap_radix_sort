@@ -6,7 +6,7 @@
 /*   By: ichikawahikaru <ichikawahikaru@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 00:08:12 by ichikawahik       #+#    #+#             */
-/*   Updated: 2025/07/08 13:16:41 by ichikawahik      ###   ########.fr       */
+/*   Updated: 2025/07/09 14:38:35 by ichikawahik      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,11 @@ t_stack	*make_new_node(int new_value)
 	t_stack	*new_node;
 
 	new_node = ft_calloc(1, sizeof(t_stack));
+	if (!new_node)
+	{
+		write(2, "Error\n", 6);
+		exit(1);
+	}
 	new_node->value = new_value;
 	new_node->index = 0;
 	new_node->next = NULL;

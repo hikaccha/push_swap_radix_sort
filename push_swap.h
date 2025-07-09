@@ -6,7 +6,7 @@
 /*   By: ichikawahikaru <ichikawahikaru@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 19:18:13 by ichikawahik       #+#    #+#             */
-/*   Updated: 2025/07/08 12:54:37 by ichikawahik      ###   ########.fr       */
+/*   Updated: 2025/07/09 20:41:33 by ichikawahik      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 # include <limits.h>
 
 # include "libft/libft.h"
-# include "ft_printf/ft_printf.h"
 
 typedef struct s_stack
 {
@@ -34,7 +33,7 @@ void	free_stack(t_stack **head);
 void	set_index(t_stack *head, int link_size);
 t_stack	*init_list(int argc, char **argv);
 
-void	error_exit(char **tmp_array);
+void	error_exit(char **tmp_array, int argc);
 int		count_arg(char **argv);
 int		check_doubles(char **argv);
 int		check_nbr(char *argv);
@@ -71,5 +70,11 @@ void	ss(t_stack **stack_a, t_stack **stack_b);
 
 int		find_biggest(t_stack **head);
 int		find_bits(int biggest_nbr);
+void	radix_bit_process(t_stack **stack_a, t_stack **stack_b,
+			int bit, int size);
+
+void	print_stack(t_stack *stack, char *name);
+void	print_both_stacks(t_stack *stack_a, t_stack *stack_b);
+void	print_sort_result(t_stack *stack_a);
 
 #endif

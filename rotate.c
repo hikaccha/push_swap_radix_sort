@@ -6,7 +6,7 @@
 /*   By: ichikawahikaru <ichikawahikaru@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 23:58:04 by ichikawahik       #+#    #+#             */
-/*   Updated: 2025/07/08 13:20:40 by ichikawahik      ###   ########.fr       */
+/*   Updated: 2025/07/09 20:39:12 by ichikawahik      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,17 @@
 void	rotate(t_stack **head)
 {
 	t_stack	*last;
+	t_stack	*first;
 
 	if (*head == NULL || (*head)->next == NULL)
 		return ;
+	first = *head;
 	last = *head;
 	while (last->next != NULL)
 		last = last->next;
-	last->next = *head;
-	*head = (*head)->next;
-	last->next->next = NULL;
+	*head = first->next;
+	first->next = NULL;
+	last->next = first;
 }
 
 void	ra(t_stack **stack_a)

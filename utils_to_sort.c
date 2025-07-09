@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichikawahikaru <ichikawahikaru@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/05 19:42:39 by ichikawahik       #+#    #+#             */
-/*   Updated: 2025/07/08 13:23:38 by ichikawahik      ###   ########.fr       */
+/*   Created: 2025/07/05 00:13:12 by ichikawahik       #+#    #+#             */
+/*   Updated: 2025/07/09 20:41:22 by ichikawahik      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int	find_biggest(t_stack **head)
 {
-	int		biggest;
 	t_stack	*tmp;
+	int		biggest;
 
-	biggest = INT_MIN;
 	tmp = *head;
+	biggest = tmp->index;
 	while (tmp)
 	{
 		if (tmp->index > biggest)
@@ -30,13 +30,33 @@ int	find_biggest(t_stack **head)
 
 int	find_bits(int biggest_nbr)
 {
-	int	max_bits;
+	int	bits;
 
-	max_bits = 0;
+	bits = 0;
 	while (biggest_nbr > 0)
 	{
-		biggest_nbr = biggest_nbr >> 1;
-		max_bits++;
+		biggest_nbr /= 2;
+		bits++;
 	}
-	return (max_bits);
+	return (bits);
+}
+
+void	radix_bit_process(t_stack **stack_a, t_stack **stack_b,
+	int bit, int size)
+{
+	int	j;
+
+	j = 0;
+	while (j < size)
+	{
+		if (*stack_a == NULL)
+			break ;
+		if (((*stack_a)->index >> bit) & 1)
+			ra(stack_a);
+		else
+			pb(stack_a, stack_b);
+		j++;
+	}
+	while (*stack_b)
+		pa(stack_a, stack_b);
 }
