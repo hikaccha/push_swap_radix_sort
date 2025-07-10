@@ -6,14 +6,14 @@
 #    By: ichikawahikaru <ichikawahikaru@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/07 15:27:32 by ichikawahik       #+#    #+#              #
-#    Updated: 2025/07/09 20:07:29 by ichikawahik      ###   ########.fr        #
+#    Updated: 2025/07/10 12:09:24 by ichikawahik      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-SRC = main.c \
+SRC = push_swap.c \
       input_check.c \
       initialize.c \
       linked_list.c \

@@ -21,4 +21,7 @@ Thumbs.db
 # Test files
 checker*
 test*
-main 
+main
+
+# Test
+/push_swap_tester
