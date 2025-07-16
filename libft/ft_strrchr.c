@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hichikaw <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hichikaw <hichikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 21:31:02 by hichikaw          #+#    #+#             */
-/*   Updated: 2024/11/16 02:52:23 by hichikaw         ###   ########.fr       */
+/*   Updated: 2025/07/13 19:43:09 by hichikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,21 +29,3 @@ char	*ft_strrchr(const char *s, int c)
 		return ((char *)s);
 	return (last_occurrence);
 }
-
-//#include <string.h>
-//#include <stdio.h>
-//
-//int main(void)
-//{
-//
-//    char test[20] = "123456321";
-//    char *p;
-//
-//    p = strrchr(test,'3');
-//
-//    printf("検索文字が見つかった場所から表示→%s\n",p);
-//
-//
-//
-//    return 0;
-//}
