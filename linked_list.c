@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   linked_list.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ichikawahikaru <ichikawahikaru@student.    +#+  +:+       +#+        */
+/*   By: hichikaw <hichikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 00:08:12 by ichikawahik       #+#    #+#             */
-/*   Updated: 2025/07/09 14:38:35 by ichikawahik      ###   ########.fr       */
+/*   Updated: 2025/07/17 18:30:44 by hichikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	count_nodes(t_stack *head)
 	return (count);
 }
 
-t_stack	*make_new_node(int new_value)
+static	t_stack	*make_new_node(int new_value)
 {
 	t_stack	*new_node;
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ichikawahikaru <ichikawahikaru@student.    +#+  +:+       +#+        */
+/*   By: hichikaw <hichikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 19:18:13 by ichikawahik       #+#    #+#             */
-/*   Updated: 2025/07/09 20:41:33 by ichikawahik      ###   ########.fr       */
+/*   Updated: 2025/07/17 21:51:58 by hichikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ int		check_nbr(char *argv);
 void	check_input(int argc, char **argv);
 
 int		count_nodes(t_stack *head);
-t_stack	*make_new_node(int new_value);
 void	insert_last(t_stack **head, int new_value);
 
 void	push(t_stack **stack_from, t_stack **stack_to);
@@ -59,8 +58,8 @@ void	rrr(t_stack **stack_a, t_stack **stack_b);
 
 int		sorted(t_stack **head);
 void	sort_three(t_stack **head);
-void	sort_five(t_stack **stack_a, t_stack **stack_b);
-void	radix_sort(t_stack **stack_a, t_stack **stack_b);
+void	sort_five(t_stack **stack_a, t_stack **stack_b, int size);
+void	radix_sort(t_stack **stack_a, t_stack **stack_b, int size);
 void	sort_stack(t_stack **stack_a, t_stack **stack_b);
 
 void	swap(t_stack **head);
