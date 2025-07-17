@@ -13,35 +13,30 @@ SRCSB = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 	    ft_lstmap.c
 
 NAME = libft.a
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 OBJC = $(SRCS:.c=.o)
 OBJCB = $(SRCSB:.c=.o)
 RM = rm -f
 AR = ar -rc
 
-# ボーナス用のオブジェクトファイル設定
 ifeq ($(MAKECMDGOALS), bonus)
 	OBJ = $(OBJC) $(OBJCB)
 else
 	OBJ = $(OBJC)
 endif
 
-# ライブラリの作成
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(AR) $@ $^
 
-# ボーナスのコンパイル
 bonus: $(OBJCB)
 	$(AR) $(NAME) $^
 
-# .o ファイルの生成ルール
 %.o: %.c libft.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
-# クリーンアップ
 clean:
 		 $(RM) $(OBJC) $(OBJCB)
 

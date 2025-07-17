@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ichikawahikaru <ichikawahikaru@student.    +#+  +:+       +#+         #
+#    By: hichikaw <hichikaw@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/07 15:27:32 by ichikawahik       #+#    #+#              #
-#    Updated: 2025/07/10 12:09:24 by ichikawahik      ###   ########.fr        #
+#    Updated: 2025/07/17 14:30:41 by hichikaw         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,8 +33,10 @@ all: $(NAME)
 $(NAME): $(OBJ) $(LIBFT)
 	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
 
-$(LIBFT):
+$(LIBFT): FORCE
 	make -C libft
+
+FORCE:
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -49,4 +51,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re FORCE

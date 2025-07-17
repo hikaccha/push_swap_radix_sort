@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_to_sort.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ichikawahikaru <ichikawahikaru@student.    +#+  +:+       +#+        */
+/*   By: hichikaw <hichikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 00:13:12 by ichikawahik       #+#    #+#             */
-/*   Updated: 2025/07/09 20:41:22 by ichikawahik      ###   ########.fr       */
+/*   Updated: 2025/07/17 20:50:24 by hichikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ichikawahikaru <ichikawahikaru@student.    +#+  +:+       +#+        */
+/*   By: hichikaw <hichikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 15:07:46 by ichikawahik       #+#    #+#             */
-/*   Updated: 2025/07/09 20:41:42 by ichikawahik      ###   ########.fr       */
+/*   Updated: 2025/07/17 21:51:20 by hichikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,10 @@ void	sort_three(t_stack **head)
 		sa(head);
 }
 
-void	sort_five(t_stack **stack_a, t_stack **stack_b)
+void	sort_five(t_stack **stack_a, t_stack **stack_b, int size)
 {
-	int	size;
 	int	pushed_count;
 
-	size = count_nodes(*stack_a);
 	pushed_count = 0;
 	while (size-- > 0)
 	{
@@ -63,16 +61,14 @@ void	sort_five(t_stack **stack_a, t_stack **stack_b)
 		sa(stack_a);
 }
 
-void	radix_sort(t_stack **stack_a, t_stack **stack_b)
+void	radix_sort(t_stack **stack_a, t_stack **stack_b, int size)
 {
 	int	biggest_nbr;
 	int	max_bits;
-	int	size;
 	int	i;
 
 	biggest_nbr = find_biggest(stack_a);
 	max_bits = find_bits(biggest_nbr);
-	size = count_nodes(*stack_a);
 	i = 0;
 	while (i < max_bits)
 	{
@@ -89,7 +85,7 @@ void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 	if (!sorted(stack_a) && size <= 3)
 		sort_three(stack_a);
 	else if (!sorted(stack_a) && size <= 5)
-		sort_five(stack_a, stack_b);
+		sort_five(stack_a, stack_b, size);
 	else if (!sorted(stack_a) && size > 5)
-		radix_sort(stack_a, stack_b);
+		radix_sort(stack_a, stack_b, size);
 }
