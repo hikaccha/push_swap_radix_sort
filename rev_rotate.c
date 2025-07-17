@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   rev_rotate.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ichikawahikaru <ichikawahikaru@student.    +#+  +:+       +#+        */
+/*   By: hichikaw <hichikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 14:38:03 by ichikawahik       #+#    #+#             */
-/*   Updated: 2025/07/08 16:26:33 by ichikawahik      ###   ########.fr       */
+/*   Updated: 2025/07/17 22:10:01 by hichikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rev_rotate(t_stack **head)
+static void	rev_rotate(t_stack **head)
 {
 	t_stack	*prev_last;
 	t_stack	*new_last;

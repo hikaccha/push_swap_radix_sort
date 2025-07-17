@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   input_check.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ichikawahikaru <ichikawahikaru@student.    +#+  +:+       +#+        */
+/*   By: hichikaw <hichikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 22:43:36 by ichikawahik       #+#    #+#             */
-/*   Updated: 2025/07/09 20:21:47 by ichikawahik      ###   ########.fr       */
+/*   Updated: 2025/07/17 22:14:12 by hichikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	error_exit(char **tmp_array, int argc)
+static void	error_exit(char **tmp_array, int argc)
 {
 	write(2, "Error\n", 6);
 	if (argc == 2)
@@ -20,7 +20,7 @@ void	error_exit(char **tmp_array, int argc)
 	exit(1);
 }
 
-int	count_arg(char **argv)
+static int	count_arg(char **argv)
 {
 	int	len;
 
@@ -30,7 +30,7 @@ int	count_arg(char **argv)
 	return (len);
 }
 
-int	check_doubles(char **argv)
+static int	check_doubles(char **argv)
 {
 	int		i;
 	int		j;
@@ -58,7 +58,7 @@ int	check_doubles(char **argv)
 	return (0);
 }
 
-int	check_nbr(char *argv)
+static int	check_nbr(char *argv)
 {
 	int	i;
 
