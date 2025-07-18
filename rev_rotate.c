@@ -6,7 +6,7 @@
 /*   By: hichikaw <hichikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 14:38:03 by ichikawahik       #+#    #+#             */
-/*   Updated: 2025/07/17 22:10:01 by hichikaw         ###   ########.fr       */
+/*   Updated: 2025/07/18 17:11:53 by hichikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 
 static void	rev_rotate(t_stack **head)
 {
-	t_stack	*prev_last;
-	t_stack	*new_last;
+	t_stack	*prev_tail;
+	t_stack	*new_tail;
 
 	if (*head == NULL || (*head)->next == NULL)
 		return ;
-	prev_last = *head;
-	while (prev_last->next != NULL)
+	prev_tail = *head;
+	while (prev_tail->next != NULL)
 	{
-		new_last = prev_last;
-		prev_last = prev_last->next;
+		new_tail = prev_tail;
+		prev_tail = prev_tail->next;
 	}
-	prev_last->next = *head;
-	new_last->next = NULL;
-	*head = prev_last;
+	prev_tail->next = *head;
+	new_tail->next = NULL;
+	*head = prev_tail;
 }
 
 void	rra(t_stack **stack_a)

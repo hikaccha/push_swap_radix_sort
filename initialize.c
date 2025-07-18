@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   initialize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ichikawahikaru <ichikawahikaru@student.    +#+  +:+       +#+        */
+/*   By: hichikaw <hichikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 23:59:29 by ichikawahik       #+#    #+#             */
-/*   Updated: 2025/07/09 20:22:23 by ichikawahik      ###   ########.fr       */
+/*   Updated: 2025/07/18 17:10:43 by hichikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ t_stack	*init_list(int argc, char **argv)
 	}
 	while (tmp[i])
 	{
-		insert_last(&stack_a, (int)ft_atoi(tmp[i]));
+		insert_tail(&stack_a, (int)ft_atoi(tmp[i]));
 		i++;
 	}
 	if (argc == 2)
