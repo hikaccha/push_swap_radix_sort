@@ -6,7 +6,7 @@
 /*   By: hichikaw <hichikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 00:08:12 by ichikawahik       #+#    #+#             */
-/*   Updated: 2025/07/17 18:30:44 by hichikaw         ###   ########.fr       */
+/*   Updated: 2025/07/18 17:10:07 by hichikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static	t_stack	*make_new_node(int new_value)
 	return (new_node);
 }
 
-void	insert_last(t_stack **head, int new_value)
+void	insert_tail(t_stack **head, int new_value)
 {
 	t_stack	*new_node;
 	t_stack	*current;

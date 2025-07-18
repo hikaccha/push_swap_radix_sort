@@ -3,29 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ichikawahikaru <ichikawahikaru@student.    +#+  +:+       +#+        */
+/*   By: hichikaw <hichikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 23:58:04 by ichikawahik       #+#    #+#             */
-/*   Updated: 2025/07/09 20:39:12 by ichikawahik      ###   ########.fr       */
+/*   Updated: 2025/07/18 17:11:53 by hichikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rotate(t_stack **head)
+static void	rotate(t_stack **head)
 {
-	t_stack	*last;
+	t_stack	*tail;
 	t_stack	*first;
 
 	if (*head == NULL || (*head)->next == NULL)
 		return ;
 	first = *head;
-	last = *head;
-	while (last->next != NULL)
-		last = last->next;
+	tail = *head;
+	while (tail->next != NULL)
+		tail = tail->next;
 	*head = first->next;
 	first->next = NULL;
-	last->next = first;
+	tail->next = first;
 }
 
 void	ra(t_stack **stack_a)

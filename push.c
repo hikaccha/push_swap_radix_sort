@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ichikawahikaru <ichikawahikaru@student.    +#+  +:+       +#+        */
+/*   By: hichikaw <hichikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 23:21:05 by ichikawahik       #+#    #+#             */
-/*   Updated: 2025/07/09 19:21:17 by ichikawahik      ###   ########.fr       */
+/*   Updated: 2025/07/17 22:08:42 by hichikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push(t_stack **stack_from, t_stack **stack_to)
+static void	push(t_stack **stack_from, t_stack **stack_to)
 {
 	t_stack	*tmp;
 

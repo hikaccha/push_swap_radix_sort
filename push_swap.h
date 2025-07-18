@@ -6,7 +6,7 @@
 /*   By: hichikaw <hichikaw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 19:18:13 by ichikawahik       #+#    #+#             */
-/*   Updated: 2025/07/17 21:51:58 by hichikaw         ###   ########.fr       */
+/*   Updated: 2025/07/18 17:10:53 by hichikaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,25 +33,18 @@ void	free_stack(t_stack **head);
 void	set_index(t_stack *head, int link_size);
 t_stack	*init_list(int argc, char **argv);
 
-void	error_exit(char **tmp_array, int argc);
-int		count_arg(char **argv);
-int		check_doubles(char **argv);
-int		check_nbr(char *argv);
 void	check_input(int argc, char **argv);
 
 int		count_nodes(t_stack *head);
-void	insert_last(t_stack **head, int new_value);
+void	insert_tail(t_stack **head, int new_value);
 
-void	push(t_stack **stack_from, t_stack **stack_to);
 void	pa(t_stack **stack_a, t_stack **stack_b);
 void	pb(t_stack **stack_a, t_stack **stack_b);
 
-void	rotate(t_stack **head);
 void	ra(t_stack **stack_a);
 void	rb(t_stack **stack_b);
 void	rr(t_stack **stack_a, t_stack **stack_b);
 
-void	rev_rotate(t_stack **head);
 void	rra(t_stack **stack_a);
 void	rrb(t_stack **stack_b);
 void	rrr(t_stack **stack_a, t_stack **stack_b);
